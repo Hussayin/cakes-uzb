@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  user-select: none;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: auto !important; /* Animatsiyasiz scroll */
+}
+
+/* Global dark/light rejim uchun qo'shimcha uslublar */
+html {
+  /* @apply bg-[#112544] text-white; */
+  @apply bg-[#45248c] text-white;
+}
+
+html.dark {
+  @apply bg-[#FFD1DC] text-black; /* Dark rejim uchun */
+}
+
+.hide-scrollbar {
+  overflow-x: scroll; /* Scroll hali mavjud bo'ladi */
+  scrollbar-width: none; /* Firefox uchun */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome va Safari uchun */
+}
+
+.active {
+  background-color: white;
+  color: black;
+}
+
+.inputs {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.inputs input {
+  color: black;
+  border-radius: 6px;
+  background-color: white;
+  padding: 5px 10px;
+  width: 80%;
+}
+
+.my-toast {
+  margin-top: 60px;
+}
