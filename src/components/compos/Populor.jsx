@@ -56,7 +56,7 @@ export default function ImageGallery() {
         <AnimatePresence>
           {selectedImage && (
             <motion.div
-              className="fixed inset-0 bg-[#112544] z-[1111111111] flex items-start justify-center p-4"
+              className="fixed inset-0 bg-[#112544] z-[111111111111] flex items-start justify-center p-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
