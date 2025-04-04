@@ -22,7 +22,7 @@ const Populor = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ ease: "easeOut", duration: 1.5 }}
-                className=" flex justify-between items-center dark:border-[#c3c1c1] border-[#25365a] dark:bg-[#f9aec0] bg-[#271158] overflow-hidden relative rounded-[20px] border-[2px] border-solid  p-[10px]"
+                className=" flex justify-between items-center dark:border-[#c3c1c1] border-[#25365a] dark:bg-[#f9aec0] bg-[#2e1563] overflow-hidden relative rounded-[20px] border-[2px] border-solid  p-[10px]"
               >
                 {/* text */}
                 <div className=" flex flex-col justify-between gap-[23px] ">

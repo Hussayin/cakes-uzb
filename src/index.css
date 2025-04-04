@@ -18,7 +18,7 @@ html {
 /* Global dark/light rejim uchun qo'shimcha uslublar */
 html {
   /* @apply bg-[#112544] text-white; */
-  @apply bg-[#45248c] text-white;
+  @apply bg-[#492890] text-white;
 }
 
 html.dark {
