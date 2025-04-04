@@ -18,8 +18,11 @@ export default function ImageGallery() {
   }, [selectedImage]);
 
   return (
-    <div className="mt-[0px] mb-[100px] text-white">
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[7px] p-2">
+    <div className="mb-[100px] text-white dark:text-black mt-[15px] p-[6px] ">
+      <h1 className=" font-nunito md:text-[35px] mb-[5px] text-[27px] dark:text-black font-bold text-white">
+        Top Cakes
+      </h1>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[13px] px-[5px] ">
         {images.map((img, index) => (
           <motion.div
             key={img.id}
@@ -31,14 +34,14 @@ export default function ImageGallery() {
             //   delay: 0.2, // Har biri 0.2s farq bilan chiqadi
             // }}
             // viewport={{ once: true }}
-            className={`mb-[8px] p-[8px] flex flex-col gap-[10px] rounded-lg transition-all duration-500 ${
-              isLoaded ? "blur-0 bg-[#0d1d33]" : "blur-md bg-[#2e1563] "
+            className={` p-[8px] flex flex-col dark:bg-[#f9aec0] gap-[10px] rounded-lg transition-all duration-500 ${
+              isLoaded ? "blur-0 bg-[#2e1563]" : "blur-md bg-[#2e1563] "
             } `}
           >
             <motion.img
               src={img.img}
               alt={`Image ${index}`}
-              className={`cursor-pointer rounded-lg shadow-md w-[100%] object-cover h-[200px] transition-all duration-500 ${
+              className={`cursor-pointer rounded-lg shadow-md w-[100%] object-cover h-[180px] transition-all duration-500 ${
                 isLoaded ? "blur-0" : "blur-md"
               }`}
               onLoad={() => setIsLoaded(true)} // Rasm yuklanganda blur yo'qoladi
@@ -47,7 +50,7 @@ export default function ImageGallery() {
             <div>
               <h1 className=" text-[18px] font-nunito">{img.title}</h1>
               {/* price */}
-              <h1 className=" leading-4 text-[17px] font-nunito text-white">
+              <h1 className=" leading-4 text-[17px] font-nunito dark:text-black text-white">
                 {img.price}$
               </h1>
             </div>
