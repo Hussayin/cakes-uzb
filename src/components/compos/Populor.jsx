@@ -31,7 +31,9 @@ export default function ImageGallery() {
             //   delay: 0.2, // Har biri 0.2s farq bilan chiqadi
             // }}
             // viewport={{ once: true }}
-            className=" mb-[8px] bg-[#0d1d33] p-[8px] flex flex-col gap-[10px] rounded-lg "
+            className={`mb-[8px] p-[8px] flex flex-col gap-[10px] rounded-lg transition-all duration-500 ${
+              isLoaded ? "blur-0 bg-[#0d1d33]" : "blur-md bg-[#2e1563] "
+            } `}
           >
             <motion.img
               src={img.img}
