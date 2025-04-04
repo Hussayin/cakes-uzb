@@ -1,101 +1,217 @@
-import React from "react";
-// icons
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { tissotLogo } from "../../assets/Images";
-import { PopulorWatch } from "../Data/WatchData";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { TiDelete } from "react-icons/ti";
+import { MdPriceChange } from "react-icons/md";
+import { OldWatches } from "../Data/WatchData";
 
-const Populor = () => {
+const images = OldWatches;
+
+export default function ImageGallery() {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  useEffect(() => {
+    document.body.style.overflow = selectedImage ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [selectedImage]);
+
   return (
-    <div className=" mt-[25px] w-[97%] m-auto">
-      <h1 className=" font-nunito md:text-[35px] text-[25px] dark:text-black font-bold text-white">
-        TOP CAKES
-      </h1>
-      <div className="mt-[7px] mb-[30px] grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-[10px] ">
-        {/* Products */}
-
-        {/* rolex */}
-        {PopulorWatch.map((watch) => {
-          return (
-            <Link key={watch.id} to={watch.link}>
+    <div className="mt-[0px] mb-[100px] text-white">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[7px] p-2">
+        {images.map((img, index) => (
+          <motion.div
+            key={img.id}
+            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }} // Juft index chapdan, toq index o‘ngdan
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              ease: "easeOut",
+              duration: 1,
+              delay: 0.2, // Har biri 0.2s farq bilan chiqadi
+            }}
+            // viewport={{ once: true }}
+            className=" mb-[8px] bg-[#0d1d33] p-[8px] flex flex-col gap-[10px] rounded-lg "
+          >
+            <motion.img
+              src={img.img}
+              alt={`Image ${index}`}
+              className="cursor-pointer rounded-lg shadow-md w-[100%] object-cover h-[200px]"
+              onClick={() => setSelectedImage(img)}
+            />
+            <div>
+              <h1 className=" text-[18px] font-nunito">{img.title}</h1>
+              {/* price */}
+              <h1 className=" leading-4 text-[17px] font-nunito text-white">
+                {img.price}$
+              </h1>
+            </div>
+          </motion.div>
+        ))}
+        <AnimatePresence>
+          {selectedImage && (
+            <motion.div
+              className="fixed inset-0 bg-[#112544] z-[1111111111] flex items-start justify-center p-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedImage(null)}
+            >
               <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ ease: "easeOut", duration: 1.5 }}
-                className=" flex justify-between items-center dark:border-[#c3c1c1] border-[#25365a] dark:bg-[#f9aec0] bg-[#2e1563] overflow-hidden relative rounded-[20px] border-[2px] border-solid  p-[10px]"
+                className="relative bg-[#0e1629] w-[100%]  justify-center py-[18px] px-[14px] pt-[20px] rounded-lg shadow-lg"
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.8 }}
+                onClick={(e) => e.stopPropagation()}
               >
-                {/* text */}
-                <div className=" flex flex-col justify-between gap-[23px] ">
-                  {/* logo */}
-                  <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{
-                      ease: "easeOut", // Easing funksiyasi
-                      duration: 1, // Animatsiya davomiyligi
-                      delay: 0.1,
-                    }}
-                    className=" flex gap-[10px] items-center "
-                  >
-                    <img
-                      src={watch.logo}
-                      alt="logo-brend"
-                      className={` ${watch.logoWidth} ${watch.logoColor} ${watch.logoPa} rounded-lg object-cover`}
-                    />
-                  </motion.div>
-                  {/* title */}
-                  <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{
-                      ease: "easeOut", // Easing funksiyasi
-                      duration: 1, // Animatsiya davomiyligi
-                      delay: 0.2,
-                    }}
-                  >
-                    <h1 className="text-[19px] leading-6 uppercase font-bold font-nunito ">
-                      {watch.brend}
-                    </h1>
-                    <h1 className=" text-[12px]">{watch.rafcode}</h1>
-                  </motion.div>
-                  {/* price */}
-                  <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{
-                      ease: "easeOut", // Easing funksiyasi
-                      duration: 1, // Animatsiya davomiyligi
-                      delay: 0.3,
-                    }}
-                  >
-                    <h1 className="font-kanit text-[27px] uppercase">
-                      {watch.price}$
-                    </h1>
-                  </motion.div>
-                </div>
-                {/* img */}
-                <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{
-                    ease: "easeOut", // Easing funksiyasi
-                    duration: 1, // Animatsiya davomiyligi
-                    delay: 0.2,
-                  }}
+                <button
+                  className="absolute top-2 right-2 bg-gray-800 text-white p-1 rounded-full"
+                  onClick={() => setSelectedImage(null)}
                 >
-                  <img
-                    src={watch.mainImage}
-                    alt="image-product-watch"
-                    className=" h-[200px] "
-                  />
-                </motion.div>
+                  <TiDelete size={29} />
+                </button>
+                <img
+                  src={selectedImage.img}
+                  alt="Selected"
+                  className=" w-[95%] object-cover m-auto border-[#9a9494] border-[2px] h-[350px] rounded-lg"
+                />
+                <h1 className="text-white text-[25px] font-nunito text-center mt-2">
+                  {selectedImage.title}
+                </h1>
+                {/* price */}
+                <h1 className=" mt-[10px] text-white text-[21px] font-nunito">
+                  Цена: {selectedImage.price}$
+                </h1>
+                <h1 className=" mt-[10px] text-white text-[21px] font-nunito">
+                  Диаметр: {selectedImage.diometr}
+                </h1>
+                <h1 className=" mt-[10px] text-white text-[21px] font-nunito">
+                  Гарантия: 1 Года
+                </h1>
+                <h1 className=" mt-[10px] text-white text-[21px] font-nunito">
+                  Состояние: C пробегом
+                </h1>
+                <div className="w-[100%] mt-[15px] flex justify-center items-center ">
+                  <a
+                    href="https://t.me/Bekhruz777"
+                    target="_blank"
+                    className=" text-[20px] p-[5px] border-[2px]  bg-green-600 rounded-[10px] border-black w-[50%] text-center "
+                  >
+                    Kупить
+                  </a>
+                </div>
+                {/* Price and valuto calqulator */}
+                {/* <h1 className=" hidden text-black text-center mt-2">
+                  {currency === "USD"
+                    ? `$${selectedImage.price}`
+                    : `${selectedImage.price * exchangeRate} UZS`}
+                </h1> */}
               </motion.div>
-            </Link>
-          );
-        })}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
-};
+}
 
-export default Populor;
+// import React from "react";
+// // icons
+// import { Link } from "react-router-dom";
+// import { motion } from "framer-motion";
+// import { tissotLogo } from "../../assets/Images";
+// import { PopulorWatch } from "../Data/WatchData";
+
+// const Populor = () => {
+//   return (
+//     <div className=" mt-[25px] w-[97%] m-auto">
+//       <h1 className=" font-nunito md:text-[35px] text-[25px] dark:text-black font-bold text-white">
+//         Top Cakes
+//       </h1>
+//       <div className="mt-[7px] mb-[30px] grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-[10px] ">
+//         {/* Products */}
+
+//         {/* rolex */}
+//         {PopulorWatch.map((watch) => {
+//           return (
+//             <Link key={watch.id} to={watch.link}>
+//               <motion.div
+//                 initial={{ opacity: 0 }}
+//                 whileInView={{ opacity: 1 }}
+//                 transition={{ ease: "easeOut", duration: 1.5 }}
+//                 className=" flex justify-between items-center dark:border-[#c3c1c1] border-[#25365a] dark:bg-[#f9aec0] bg-[#2e1563] overflow-hidden relative rounded-[20px] border-[2px] border-solid  p-[10px]"
+//               >
+//                 {/* text */}
+//                 <div className=" flex flex-col justify-between gap-[23px] ">
+//                   {/* logo */}
+//                   <motion.div
+//                     initial={{ opacity: 0, x: -50 }}
+//                     whileInView={{ opacity: 1, x: 0 }}
+//                     transition={{
+//                       ease: "easeOut", // Easing funksiyasi
+//                       duration: 1, // Animatsiya davomiyligi
+//                       delay: 0.1,
+//                     }}
+//                     className=" flex gap-[10px] items-center "
+//                   >
+//                     <img
+//                       src={watch.logo}
+//                       alt="logo-brend"
+//                       className={` ${watch.logoWidth} ${watch.logoColor} ${watch.logoPa} rounded-lg object-cover`}
+//                     />
+//                   </motion.div>
+//                   {/* title */}
+//                   <motion.div
+//                     initial={{ opacity: 0, x: -50 }}
+//                     whileInView={{ opacity: 1, x: 0 }}
+//                     transition={{
+//                       ease: "easeOut", // Easing funksiyasi
+//                       duration: 1, // Animatsiya davomiyligi
+//                       delay: 0.2,
+//                     }}
+//                   >
+//                     <h1 className="text-[19px] leading-6 uppercase font-bold font-nunito ">
+//                       {watch.brend}
+//                     </h1>
+//                     <h1 className=" text-[12px]">{watch.rafcode}</h1>
+//                   </motion.div>
+//                   {/* price */}
+//                   <motion.div
+//                     initial={{ opacity: 0, x: -50 }}
+//                     whileInView={{ opacity: 1, x: 0 }}
+//                     transition={{
+//                       ease: "easeOut", // Easing funksiyasi
+//                       duration: 1, // Animatsiya davomiyligi
+//                       delay: 0.3,
+//                     }}
+//                   >
+//                     <h1 className="font-kanit text-[27px] uppercase">
+//                       {watch.price}$
+//                     </h1>
+//                   </motion.div>
+//                 </div>
+//                 {/* img */}
+//                 <motion.div
+//                   initial={{ opacity: 0, x: 50 }}
+//                   whileInView={{ opacity: 1, x: 0 }}
+//                   transition={{
+//                     ease: "easeOut", // Easing funksiyasi
+//                     duration: 1, // Animatsiya davomiyligi
+//                     delay: 0.2,
+//                   }}
+//                 >
+//                   <img
+//                     src={watch.mainImage}
+//                     alt="image-product-watch"
+//                     className=" h-[200px] "
+//                   />
+//                 </motion.div>
+//               </motion.div>
+//             </Link>
+//           );
+//         })}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Populor;
