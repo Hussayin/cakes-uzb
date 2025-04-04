@@ -26,8 +26,8 @@ export default function ImageGallery() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{
               ease: "easeOut",
-              duration: 1,
-              delay: 0.2, // Har biri 0.2s farq bilan chiqadi
+              duration: 0.7,
+              delay: 0.1, // Har biri 0.2s farq bilan chiqadi
             }}
             // viewport={{ once: true }}
             className=" mb-[8px] bg-[#0d1d33] p-[8px] flex flex-col gap-[10px] rounded-lg "
