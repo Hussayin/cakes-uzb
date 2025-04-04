@@ -27,13 +27,13 @@ export default function ImageGallery() {
             transition={{
               ease: "easeOut",
               duration: 0.7,
-              delay: 0.1, // Har biri 0.2s farq bilan chiqadi
+              delay: 0.2, // Har biri 0.2s farq bilan chiqadi
             }}
             // viewport={{ once: true }}
             className=" mb-[8px] bg-[#0d1d33] p-[8px] flex flex-col gap-[10px] rounded-lg "
           >
             <motion.img
-              src={img.img}
+              src="https://static.insales-cdn.com/files/1/880/3138416/original/slider004.jpg"
               alt={`Image ${index}`}
               className="cursor-pointer rounded-lg shadow-md w-[100%] object-cover h-[200px]"
               onClick={() => setSelectedImage(img)}
