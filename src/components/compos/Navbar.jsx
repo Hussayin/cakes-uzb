@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     <div className="w-full">
       {/* Navbar */}
-      <div className=" z-[10000]  border-b-[2px] border-solid dark:border-black rounded-b-[15px] bg-[#271158] dark:bg-white  md:text-white dark:text-black flex justify-between py-[20px] items-center w-[100%] border-white px-[25px] md:px-[40px]  m-auto ">
+      <div className=" z-[10000]  border-b-[2px] border-solid dark:border-black rounded-b-[15px] bg-[#271158] dark:bg-[#f6f3f3]  md:text-white dark:text-black flex justify-between py-[20px] items-center w-[100%] border-white px-[25px] md:px-[40px]  m-auto ">
         <div>
           <h1 className=" font-kanit flex justify-center items-center gap-[7px] text-[24px] text-red-400 ">
             <GiCupcake /> La Miranda <GiCupcake />
