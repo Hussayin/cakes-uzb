@@ -7,6 +7,7 @@ import { OldWatches } from "../Data/WatchData";
 const images = OldWatches;
 
 export default function ImageGallery() {
+  const [isLoaded, setIsLoaded] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
@@ -33,9 +34,12 @@ export default function ImageGallery() {
             className=" mb-[8px] bg-[#0d1d33] p-[8px] flex flex-col gap-[10px] rounded-lg "
           >
             <motion.img
-              src="https://static.insales-cdn.com/files/1/880/3138416/original/slider004.jpg"
+              src={img.img}
               alt={`Image ${index}`}
-              className="cursor-pointer rounded-lg shadow-md w-[100%] object-cover h-[200px]"
+              className={`cursor-pointer rounded-lg shadow-md w-[100%] object-cover h-[200px] transition-all duration-500 ${
+                isLoaded ? "blur-0" : "blur-md"
+              }`}
+              onLoad={() => setIsLoaded(true)} // Rasm yuklanganda blur yo'qoladi
               onClick={() => setSelectedImage(img)}
             />
             <div>
