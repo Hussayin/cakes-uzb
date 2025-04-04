@@ -23,13 +23,13 @@ export default function ImageGallery() {
         {images.map((img, index) => (
           <motion.div
             key={img.id}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }} // Juft index chapdan, toq index o‘ngdan
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{
-              ease: "easeOut",
-              duration: 0.7,
-              delay: 0.2, // Har biri 0.2s farq bilan chiqadi
-            }}
+            // initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }} // Juft index chapdan, toq index o‘ngdan
+            // whileInView={{ opacity: 1, x: 0 }}
+            // transition={{
+            //   ease: "easeOut",
+            //   duration: 0.7,
+            //   delay: 0.2, // Har biri 0.2s farq bilan chiqadi
+            // }}
             // viewport={{ once: true }}
             className=" mb-[8px] bg-[#0d1d33] p-[8px] flex flex-col gap-[10px] rounded-lg "
           >
