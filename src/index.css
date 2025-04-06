@@ -18,11 +18,11 @@ html {
 /* Global dark/light rejim uchun qo'shimcha uslublar */
 html {
   /* @apply bg-[#112544] text-white; */
-  @apply bg-[#492890] text-white;
+  @apply bg-[#492791] text-white;
 }
 
 html.dark {
-  @apply bg-[#FFD1DC] text-black; /* Dark rejim uchun */
+  @apply bg-[#facbd6] text-black; /* Dark rejim uchun */
 }
 
 .hide-scrollbar {
