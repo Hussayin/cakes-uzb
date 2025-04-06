@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { TiDelete } from "react-icons/ti";
 import { MdPriceChange } from "react-icons/md";
 import { OldWatches } from "../Data/WatchData";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 const images = OldWatches;
 
@@ -59,29 +60,33 @@ export default function ImageGallery() {
         <AnimatePresence>
           {selectedImage && (
             <motion.div
-              className="fixed inset-0 bg-[#112544] z-[111111111111] flex items-start justify-center p-4"
+              className="fixed inset-0 dark:bg-[#facbd6]  bg-[#492791] w-[100vw] overflow-x-auto h-[100vh] z-[111111111111] flex items-start justify-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedImage(null)}
             >
               <motion.div
-                className="relative bg-[#0e1629] w-[100%]  justify-center py-[18px] px-[14px] pt-[20px] rounded-lg shadow-lg"
+                className="relative bg-[#04070f] w-[100%] pt-[50px] justify-center py-[18px] shadow-lg"
                 initial={{ scale: 0.8 }}
                 animate={{ scale: 1 }}
                 exit={{ scale: 0.8 }}
                 onClick={(e) => e.stopPropagation()}
               >
+                {/*//! Back button */}
                 <button
-                  className="absolute top-2 right-2 bg-gray-800 text-white p-1 rounded-full"
+                  className="absolute w-[100%] top-[0] bg-[#f9aec0] text-white py-[5px] px-[10px] "
                   onClick={() => setSelectedImage(null)}
                 >
-                  <TiDelete size={29} />
+                  <IoMdArrowRoundBack
+                    className=" bg-white text-black rounded-xl p-[7px] "
+                    size={42}
+                  />
                 </button>
                 <img
                   src={selectedImage.img}
                   alt="Selected"
-                  className=" w-[95%] object-cover m-auto border-[#9a9494] border-[2px] h-[350px] rounded-lg"
+                  className=" w-[100%] object-cover m-auto border-[#9a9494] border-[2px] h-[350px]"
                 />
                 <h1 className="text-white text-[25px] font-nunito text-center mt-2">
                   {selectedImage.title}
@@ -99,6 +104,7 @@ export default function ImageGallery() {
                 <h1 className=" mt-[10px] text-white text-[21px] font-nunito">
                   Состояние: C пробегом
                 </h1>
+
                 <div className="w-[100%] mt-[15px] flex justify-center items-center ">
                   <a
                     href="https://t.me/Bekhruz777"

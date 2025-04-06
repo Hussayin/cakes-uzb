@@ -17,17 +17,17 @@ const MenuAll = () => {
     >
       {/* top watchs */}
       <NavLink
-        className="w-[100%] border-[1px] border-white dark:text-black dark:border-black rounded-[7px] py-[7px] "
+        className="w-[100%] border-[1px] font-nunito border-white dark:text-black dark:border-black rounded-[7px] py-[7px] "
         to="/"
       >
-        <h1>Топовые часы</h1>
+        <h1>Top Cakes</h1>
       </NavLink>
       {/* All watches */}
       <NavLink
         to="/AllWatches"
-        className="w-[100%] border-[1px] border-white rounded-[7px] dark:text-black dark:border-black py-[7px]"
+        className="w-[100%] font-kanit border-[1px] border-white rounded-[7px] dark:text-black dark:border-black py-[7px]"
       >
-        <h1>Б/y</h1>
+        <h1>All Cakes</h1>
       </NavLink>
       {/* basket */}
       <NavLink
