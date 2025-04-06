@@ -32,7 +32,7 @@ export default function ImageGallery() {
       <h1 className=" font-nunito md:text-[35px] mb-[5px] text-[27px] dark:text-black font-bold text-white">
         Top Cakes
       </h1>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[13px] px-[5px] ">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[9px] px-[2px] ">
         {images.map((img, index) => (
           <motion.div
             key={img.id}
@@ -44,7 +44,7 @@ export default function ImageGallery() {
             //   delay: 0.2, // Har biri 0.2s farq bilan chiqadi
             // }}
             // viewport={{ once: true }}
-            className={` p-[8px] flex flex-col dark:bg-[#f9aec0] gap-[10px] rounded-lg transition-all duration-500 ${
+            className={` p-[3px] flex flex-col mb-[7px] dark:bg-[#f9aec0] rounded-lg transition-all duration-500 ${
               isLoaded ? "blur-0 bg-[#2e1563]" : "blur-md bg-[#2e1563] "
             } `}
           >
@@ -57,11 +57,11 @@ export default function ImageGallery() {
               onLoad={() => setIsLoaded(true)} // Rasm yuklanganda blur yo'qoladi
               onClick={() => setSelectedImage(img)}
             />
-            <div>
-              <h1 className=" text-[18px] font-nunito">{img.title}</h1>
+            <div className=" p-[6px] font-bold ">
+              <h1 className=" text-[18px] font-nunito">Big Cake</h1>
               {/* price */}
               <h1 className=" leading-4 text-[17px] font-nunito dark:text-black text-white">
-                {img.price}$
+                250 000 cym
               </h1>
             </div>
           </motion.div>
@@ -69,35 +69,35 @@ export default function ImageGallery() {
         <AnimatePresence>
           {selectedImage && (
             <motion.div
-              className="fixed inset-0 dark:bg-[#facbd6]  bg-[#492791] w-[100vw] overflow-x-auto h-[100vh] z-[111111111111] flex items-start justify-center"
+              className="fixed inset-0 dark:bg-[#facbd6] bg-[#492791] w-[100vw] overflow-x-auto h-[100vh] z-[111111111111] flex items-start justify-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedImage(null)}
             >
               <motion.div
-                className="relative w-[100%] pt-[50px] justify-center py-[18px]"
+                className="relative w-[100%] pt-[65px] justify-center py-[18px]"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/*//! Back button */}
                 <button
-                  className=" fixed w-[100%] top-[0] dark:bg-[#f9aec0] bg-[#2e1563] text-white py-[5px] px-[13px] "
+                  className=" fixed w-[100%] top-[0] dark:bg-[#f9aec0] bg-[#2e1563] text-white py-[9px] px-[13px] "
                   onClick={() => setSelectedImage(null)}
                 >
                   <IoMdArrowRoundBack
                     className=" bg-white text-black rounded-xl p-[7px] "
-                    size={42}
+                    size={40}
                   />
                 </button>
                 {/*  */}
                 {/*//! mein image and typs */}
-                <div className="flex dark:bg-[#f9aec0] bg-[#2e1563] pb-[15px] rounded-b-[30px] flex-col gap-[13px] justify-center items-center w-[100%]">
+                <div className="flex dark:bg-[#f9aec0] bg-[#2e1563] pb-[15px] rounded-[30px] flex-col gap-[13px] justify-center items-center w-[100%]">
                   {/* Main image */}
                   <motion.div>
                     <motion.img
                       src={activeImage}
                       alt="Active watch"
-                      className="w-[100%] object-cover m-auto rounded-b-[30px] h-[350px]"
+                      className="w-[100%] object-cover m-auto rounded-[30px] h-[350px]"
                     />
                   </motion.div>
                   <motion.div
@@ -136,7 +136,7 @@ export default function ImageGallery() {
                 </div>
                 {/*//! Price */}
                 <div className="mt-[30px] dark:bg-[#f9aec0] bg-[#2e1563] rounded-[30px] pb-[25px] ">
-                  <h1 className=" text-center font-nunito text-[24px] pb-[3px] pt-[10px] ">
+                  <h1 className=" text-center font-bold font-nunito text-[24px] pb-[3px] pt-[10px] ">
                     Cake Type
                   </h1>
                   <div className=" font-nunito px-[15px] flex flex-col gap-[7px] ">
@@ -161,7 +161,7 @@ export default function ImageGallery() {
                       transition={{
                         ease: "easeOut", // Easing funksiyasi
                         duration: 0.6, // Animatsiya davomiyligi
-                        delay: 0.1,
+                        delay: 0.2,
                       }}
                       className=" text-[20px] flex gap-[13px] items-center "
                     >
@@ -175,7 +175,7 @@ export default function ImageGallery() {
                       transition={{
                         ease: "easeOut", // Easing funksiyasi
                         duration: 0.6, // Animatsiya davomiyligi
-                        delay: 0.1,
+                        delay: 0.3,
                       }}
                       className=" text-[20px] flex gap-[13px] items-center "
                     >
@@ -186,7 +186,7 @@ export default function ImageGallery() {
                 </div>
                 {/*//! infos */}
                 <div className="mt-[30px] dark:bg-[#f9aec0] bg-[#2e1563] rounded-[30px] pb-[25px] ">
-                  <h1 className=" text-center font-nunito text-[24px] pb-[3px] pt-[10px] ">
+                  <h1 className=" font-bold text-center font-nunito text-[24px] pb-[3px] pt-[10px] ">
                     Cake Infos
                   </h1>
                   <div className=" font-nunito px-[15px] flex flex-col gap-[7px] ">
@@ -225,7 +225,7 @@ export default function ImageGallery() {
                       transition={{
                         ease: "easeOut", // Easing funksiyasi
                         duration: 0.6, // Animatsiya davomiyligi
-                        delay: 0.2,
+                        delay: 0.3,
                       }}
                       className=" text-[20px] flex gap-[13px] items-center "
                     >
@@ -239,7 +239,7 @@ export default function ImageGallery() {
                       transition={{
                         ease: "easeOut", // Easing funksiyasi
                         duration: 0.6, // Animatsiya davomiyligi
-                        delay: 0.2,
+                        delay: 0.4,
                       }}
                       className=" text-[20px] flex gap-[13px] items-center "
                     >
@@ -253,15 +253,44 @@ export default function ImageGallery() {
                       transition={{
                         ease: "easeOut", // Easing funksiyasi
                         duration: 0.6, // Animatsiya davomiyligi
-                        delay: 0.3,
+                        delay: 0.5,
                       }}
                       className=" text-[20px] flex gap-[13px] items-center "
                     >
-                      <h1>- Mасса:</h1>
+                      <h1>- Mасса (X1):</h1>
                       <h1>{selectedImage.weight}</h1>
+                    </motion.div>
+                    {/*  */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        ease: "easeOut", // Easing funksiyasi
+                        duration: 0.6, // Animatsiya davomiyligi
+                        delay: 0.6,
+                      }}
+                      className=" text-[20px] flex gap-[13px] items-center "
+                    >
+                      <h1>- Mасса (X2):</h1>
+                      <h1>{selectedImage.weight2}</h1>
+                    </motion.div>
+                    {/*  */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        ease: "easeOut", // Easing funksiyasi
+                        duration: 0.6, // Animatsiya davomiyligi
+                        delay: 0.6,
+                      }}
+                      className=" text-[20px] flex gap-[13px] items-center "
+                    >
+                      <h1>- Mасса (X3):</h1>
+                      <h1>{selectedImage.weight3}</h1>
                     </motion.div>
                   </div>
                 </div>
+                {/*//!  */}
                 {/*  */}
                 {/* <div className="w-[100%] mt-[15px] flex justify-center items-center ">
                   <a

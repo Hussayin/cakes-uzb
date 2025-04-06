@@ -24,6 +24,8 @@ export const OldWatches = [
     diameter2: "30 sm",
     diameter3: "35 sm",
     weight: "2 kg",
+    weight2: "2.5 kg",
+    weight3: "3 kg",
     img2: "https://static.insales-cdn.com/files/1/880/3138416/original/slider004.jpg",
     img3: "https://static.insales-cdn.com/files/1/882/3138418/original/slider005.jpg",
   },
