@@ -4,6 +4,9 @@ import { TiDelete } from "react-icons/ti";
 import { MdPriceChange } from "react-icons/md";
 import { OldWatches } from "../Data/WatchData";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import { TbTruckDelivery } from "react-icons/tb";
+import { FaStarAndCrescent } from "react-icons/fa";
+import { HiOutlineCake } from "react-icons/hi";
 
 const images = OldWatches;
 
@@ -81,11 +84,11 @@ export default function ImageGallery() {
               >
                 {/*//! Back button */}
                 <button
-                  className=" fixed w-[100%] top-[0] dark:bg-[#f9aec0] bg-[#2e1563] text-white py-[9px] px-[13px] "
+                  className=" fixed w-[100%] flex at top-[0] dark:bg-[#f9aec0] bg-[#2e1563] text-white py-[9px] px-[13px] "
                   onClick={() => setSelectedImage(null)}
                 >
                   <IoMdArrowRoundBack
-                    className=" bg-white text-black rounded-xl p-[7px] "
+                    className=" bg-white w-[60px] text-black rounded-xl p-[7px] "
                     size={40}
                   />
                 </button>
@@ -93,7 +96,11 @@ export default function ImageGallery() {
                 {/*//! mein image and typs */}
                 <div className="flex dark:bg-[#f9aec0] bg-[#2e1563] pb-[15px] rounded-[30px] flex-col gap-[13px] justify-center items-center w-[100%]">
                   {/* Main image */}
-                  <motion.div>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ ease: "easeOut", duration: 1.5 }}
+                  >
                     <motion.img
                       src={activeImage}
                       alt="Active watch"
@@ -290,7 +297,64 @@ export default function ImageGallery() {
                     </motion.div>
                   </div>
                 </div>
-                {/*//!  */}
+                {/*//! Our servises */}
+                <div className="mt-[30px] dark:bg-[#f9aec0] bg-[#2e1563] rounded-[30px] pb-[25px] ">
+                  <h1 className=" text-center font-bold font-nunito text-[24px] pb-[3px] pt-[10px] ">
+                    Наши услуги
+                  </h1>
+                  <div className=" mt-[15px] font-nunito px-[15px] flex flex-wrap justify-around leading-5 items-center gap-[40px] ">
+                    {/*  */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        ease: "easeOut", // Easing funksiyasi
+                        duration: 0.6, // Animatsiya davomiyligi
+                        delay: 0.1,
+                      }}
+                      className=" text-[20px] flex-col flex items-center "
+                    >
+                      <div>
+                        <TbTruckDelivery className=" text-[120px] " />
+                      </div>
+                      <h1 className=" font-nunito font-bold ">Доставка</h1>
+                    </motion.div>
+                    {/*  */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        ease: "easeOut", // Easing funksiyasi
+                        duration: 0.6, // Animatsiya davomiyligi
+                        delay: 0.1,
+                      }}
+                      className=" text-[20px] flex-col flex gap-[10px] items-center "
+                    >
+                      <div>
+                        <FaStarAndCrescent className=" text-[100px] " />
+                      </div>
+                      <h1 className=" font-nunito font-bold ">Halal</h1>
+                    </motion.div>
+                    {/*  */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        ease: "easeOut", // Easing funksiyasi
+                        duration: 0.6, // Animatsiya davomiyligi
+                        delay: 0.1,
+                      }}
+                      className=" text-[20px] flex-col flex items-center "
+                    >
+                      <div>
+                        <HiOutlineCake className=" text-[120px] " />
+                      </div>
+                      <h1 className=" font-nunito font-bold ">
+                        10% sale Birth days
+                      </h1>
+                    </motion.div>
+                  </div>
+                </div>
                 {/*  */}
                 {/* <div className="w-[100%] mt-[15px] flex justify-center items-center ">
                   <a
