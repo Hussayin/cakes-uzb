@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 //* compos
 import Enter from "./Enter";
-import Tissot from "../watchs/Tissot";
 import TissotDetails from "../watchDetails/TissotDetails";
 import Longines from "../watchs/Longines";
 import LonginesDetails from "../watchDetails/LonginesDetails";
@@ -17,7 +16,6 @@ import Send from "../itSkupka/Send";
 import Skupka from "../itSkupka/Olish";
 import Rolex from "../watchs/Rolex";
 import RolexDetails from "../watchDetails/RolexDetails";
-import Womens from "../watchs/Womens";
 import WomensDetails from "../watchDetails/WomenDetails";
 import Basket from "./Basket";
 import { ToastContainer } from "react-toastify"; // Toastni qo'shamiz
@@ -26,6 +24,8 @@ import Raymond from "../watchs/Raymond";
 import RaymondDetails from "../watchDetails/RaymondDetails";
 import Hamilton from "../watchs/Hamilton";
 import HamiltonDetails from "../watchDetails/HamiltonDetails";
+import TortProducts from "../watchs/Womens";
+import PirojniProducts from "../watchs/Tissot";
 
 const App = () => {
   return (
@@ -44,7 +44,7 @@ const App = () => {
           <Route path="/skupka" element={<Skupka />} />
           <Route path="/send" element={<Send />} />
           {/* Tissot */}
-          <Route path="/tissot" element={<Tissot />} />
+          <Route path="/tissot" element={<PirojniProducts />} />
           <Route path="/tissot/:id" element={<TissotDetails />} />
           {/* Longines */}
           <Route path="/longines" element={<Longines />} />
@@ -59,7 +59,7 @@ const App = () => {
           <Route path="/rolex" element={<Rolex />} />
           <Route path="/rolex/:id" element={<RolexDetails />} />
           {/* Womens */}
-          <Route path="/womens" element={<Womens />} />
+          <Route path="/womens" element={<TortProducts />} />
           <Route path="/womens/:id" element={<WomensDetails />} />
           {/* raymond */}
           <Route path="/raymond" element={<Raymond />} />

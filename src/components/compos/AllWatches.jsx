@@ -9,7 +9,7 @@ const AllWatches = () => {
   return (
     <div>
       {/* Exit */}
-      <div className="sticky top-0 z-[10000000] flex flex-col gap-[10px] dark:bg-white bg-[#0f192b] p-[13px] px-[15px] ">
+      <div className="sticky top-0 z-[10000000] flex flex-col gap-[10px] dark:bg-[#f9aec0] bg-[#2e1563]  border-[#ffffff] border-b-[2px] p-[13px] px-[15px] ">
         <Link to="/" className="">
           <h1 className="flex items-center gap-[2px] font-bold font-nunito text-[17px]">
             <FaChevronLeft className="text-[27px]" /> назад

@@ -5,7 +5,7 @@ import { MdPriceChange } from "react-icons/md";
 import { OldWatches } from "../Data/WatchData";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { TbTruckDelivery } from "react-icons/tb";
-import { FaStarAndCrescent } from "react-icons/fa";
+import { FaInstagram, FaStarAndCrescent, FaTelegram } from "react-icons/fa";
 import { HiOutlineCake } from "react-icons/hi";
 
 const images = OldWatches;
@@ -79,12 +79,12 @@ export default function ImageGallery() {
               onClick={() => setSelectedImage(null)}
             >
               <motion.div
-                className="relative w-[100%] pt-[65px] justify-center py-[18px]"
+                className="relative mb-[75px] w-[100%] pt-[65px] justify-center py-[18px]"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/*//! Back button */}
                 <button
-                  className=" fixed w-[100%] flex at top-[0] dark:bg-[#f9aec0] bg-[#2e1563] text-white py-[9px] px-[13px] "
+                  className=" fixed w-[100%] flex at top-[0] border-b-2 dark:bg-[#f9aec0] bg-[#2e1563] text-white py-[9px] px-[13px] "
                   onClick={() => setSelectedImage(null)}
                 >
                   <IoMdArrowRoundBack
@@ -96,11 +96,7 @@ export default function ImageGallery() {
                 {/*//! mein image and typs */}
                 <div className="flex dark:bg-[#f9aec0] bg-[#2e1563] pb-[15px] rounded-[30px] flex-col gap-[13px] justify-center items-center w-[100%]">
                   {/* Main image */}
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ ease: "easeOut", duration: 1.5 }}
-                  >
+                  <motion.div>
                     <motion.img
                       src={activeImage}
                       alt="Active watch"
@@ -302,7 +298,7 @@ export default function ImageGallery() {
                   <h1 className=" text-center font-bold font-nunito text-[24px] pb-[3px] pt-[10px] ">
                     Наши услуги
                   </h1>
-                  <div className=" mt-[15px] font-nunito px-[15px] flex flex-wrap justify-around leading-5 items-center gap-[40px] ">
+                  <div className=" mt-[15px] font-nunito px-[15px] flex justify-center leading-5 items-center gap-[40px] ">
                     {/*  */}
                     <motion.div
                       initial={{ opacity: 0, x: -50 }}
@@ -315,7 +311,7 @@ export default function ImageGallery() {
                       className=" text-[20px] flex-col flex items-center "
                     >
                       <div>
-                        <TbTruckDelivery className=" text-[120px] " />
+                        <TbTruckDelivery className=" text-[100px] " />
                       </div>
                       <h1 className=" font-nunito font-bold ">Доставка</h1>
                     </motion.div>
@@ -328,26 +324,10 @@ export default function ImageGallery() {
                         duration: 0.6, // Animatsiya davomiyligi
                         delay: 0.1,
                       }}
-                      className=" text-[20px] flex-col flex gap-[10px] items-center "
-                    >
-                      <div>
-                        <FaStarAndCrescent className=" text-[100px] " />
-                      </div>
-                      <h1 className=" font-nunito font-bold ">Halal</h1>
-                    </motion.div>
-                    {/*  */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{
-                        ease: "easeOut", // Easing funksiyasi
-                        duration: 0.6, // Animatsiya davomiyligi
-                        delay: 0.1,
-                      }}
                       className=" text-[20px] flex-col flex items-center "
                     >
                       <div>
-                        <HiOutlineCake className=" text-[120px] " />
+                        <HiOutlineCake className=" text-[100px] " />
                       </div>
                       <h1 className=" font-nunito font-bold ">
                         10% sale Birth days
@@ -355,16 +335,52 @@ export default function ImageGallery() {
                     </motion.div>
                   </div>
                 </div>
-                {/*  */}
-                {/* <div className="w-[100%] mt-[15px] flex justify-center items-center ">
+                {/*//! button buy */}
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    ease: "easeOut", // Easing funksiyasi
+                    duration: 0.5, // Animatsiya davomiyligi
+                    delay: 0.1,
+                  }}
+                  className=" fixed gap-[10px] px-[20px] py-[10px] dark:bg-[#f9aec0] bg-[#2e1563]  z-[10000000000] bottom-0 w-[100%] flex justify-between items-center border-t-[2px] rounded-t-[20px] border-t-white p-[5px] "
+                >
+                  {/* buttons */}
                   <a
-                    href="https://t.me/Bekhruz777"
+                    href="https://t.me/khusko077"
                     target="_blank"
-                    className=" text-[20px] p-[5px] border-[2px]  bg-green-600 rounded-[10px] border-black w-[50%] text-center "
+                    className=" text-[21px] p-[5px] border-[2px] bg-green-600 rounded-[10px] border-black w-[100%] text-center "
                   >
-                    Kупить
+                    Buy
                   </a>
-                </div> */}
+                  {/* buttons */}
+                  <a
+                    href="https://t.me/khusko077"
+                    target="_blank"
+                    className=" text-[21px] p-[5px] border-[2px] bg-green-600 rounded-[10px] border-black w-[100%] text-center "
+                  >
+                    Order
+                  </a>
+                  <div>
+                    <a
+                      target="_blank"
+                      href="https://www.instagram.com/khusko1"
+                      className=" text-[30px]  "
+                    >
+                      <FaInstagram />
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      target="_blank"
+                      href="https://t.me/khusko077"
+                      className=" text-[30px]"
+                    >
+                      <FaTelegram />
+                    </a>
+                  </div>
+                </motion.div>
               </motion.div>
             </motion.div>
           )}
