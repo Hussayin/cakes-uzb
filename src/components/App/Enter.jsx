@@ -13,7 +13,7 @@ const Enter = () => {
       {/* SEO uchun Helmet */}
       <Helmet>
         {/* Saytning sarlavhasi */}
-        <title>The Watch Outlet - Oригинальные часы | Soatlar do'koni</title>
+        <title>La Miranda</title>
 
         {/* google metta tags */}
         {/* <meta
