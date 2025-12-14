@@ -1,14 +1,1 @@
-export { default as tissotLogo } from "././tissotLogo.jpg";
-export { default as longinesLogo } from "././longines.jpg";
-export { default as rolexLogo } from "././rolexLogo.jpg";
-export { default as fredriqueLogo } from "././fredrique.svg";
-export { default as mauricoLogo } from "././maurice.png";
-export { default as caisoLogo } from "././caisoLogo.jpg";
-export { default as armandLogo } from "././armandLogo.png";
-export { default as hamiltonLogo } from "././hamilton.png";
-export { default as westLogo } from "././west.png";
-export { default as armaniLogo } from "././Armani.png";
-export { default as calvinLogo } from "././calvinLogo.webp";
-export { default as raymondLogo } from "././raymond.webp";
-export { default as march2 } from "././forWomens2.webp";
-export { default as ramazon } from "././ramazon.webp";
+// export { default as tissotLogo } from "././tissotLogo.jpg";
