@@ -13,7 +13,7 @@ const Countries = () => {
           />
           <h3 className=" font-cormorant font-bold ">Иран</h3>
         </div>
-        {/* eron */}
+        {/* Turkiya */}
         <div className=" flex flex-col justify-center items-center ">
           <img
             src="https://cdn.britannica.com/82/4782-050-8129909C/Flag-Turkey.jpg"
@@ -22,7 +22,7 @@ const Countries = () => {
           />
           <h3 className=" font-cormorant font-bold ">Турция</h3>
         </div>
-        {/* eron */}
+        {/* Afgon */}
         <div className=" flex flex-col justify-center items-center ">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Flag_of_Afghanistan_%282013%E2%80%932021%29.svg/1200px-Flag_of_Afghanistan_%282013%E2%80%932021%29.svg.png"
@@ -31,7 +31,7 @@ const Countries = () => {
           />
           <h3 className=" font-cormorant font-bold ">Афган</h3>
         </div>
-        {/* eron */}
+        {/* Turkman */}
         <div className=" flex flex-col justify-center items-center ">
           <img
             src="https://www.advantour.com/img/turkmenistan/symbolics/turkmenistan-flag_sm.jpg"

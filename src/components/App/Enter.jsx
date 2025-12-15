@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../comps/Navbar";
 import Slider from "../comps/Slider";
 import Countries from "../comps/Countries";
+import NewProducts from "../comps/newProducts";
 
 const Enter = () => {
   return (
@@ -9,6 +10,7 @@ const Enter = () => {
       <Navbar />
       <Slider />
       <Countries />
+      <NewProducts />
     </div>
   );
 };

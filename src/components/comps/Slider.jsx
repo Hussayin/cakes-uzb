@@ -12,7 +12,7 @@ const slides = [
   },
   {
     id: 3,
-    img: "https://www.sagexpress.uz/media/images/isfahan.jpg",
+    img: "https://www.sagexpress.uz/media/images/7261-2.jpg",
   },
 ];
 
