@@ -1,6 +1,6 @@
 import React from "react";
 
-const NewProducts = () => {
+const NewCarpets = () => {
   return (
     <div className=" mt-[20px] m-auto w-[95%] ">
       {/* textttttt */}
@@ -310,4 +310,4 @@ const NewProducts = () => {
   );
 };
 
-export default NewProducts;
+export default NewCarpets;
