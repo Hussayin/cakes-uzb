@@ -1,26 +1,20 @@
 {
-  "id": "/",
   "name": "Sanat Hali",
   "short_name": "Sanat Hali",
-  "description": "Sanat Hali – zamonaviy va qulay PWA web ilova",
   "start_url": "/",
-  "scope": "/",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#FFF7ED",
-  "theme_color": "#FFF7ED",
+  "background_color": "#fff7ed",
+  "theme_color": "#fff7ed",
   "icons": [
     {
       "src": "/image192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
       "src": "/image512.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     }
   ]
 }
