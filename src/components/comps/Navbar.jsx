@@ -13,7 +13,7 @@ const Navbar = () => {
       {/* NAVBAR */}
       <div className="bg-white flex justify-between px-[15px] items-center pb-[5px] border-b-2 rounded-b-[30px] border-[#9A7447] relative z-50">
         {/* logo */}
-        <img src="/image512.png" alt="logo" className="h-[70px]" />
+        <img src="/image512.png" alt="logo" className="h-[80px]" />
 
         <div className="flex items-center gap-[30px]">
           <FaShoppingBasket className="text-[#9A7447]" size={25} />

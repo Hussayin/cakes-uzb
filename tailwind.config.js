@@ -5,9 +5,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        kanit: ["Kanit", "sans-serif"], // Kanit shriftini ulash
-        nunito: ["Nunito", "sans-serif"], // Nunito shriftini ulash
-        kaushan: ["Kaushan", "sans-serif"], // Nunito shriftini ulash
+        // Custom font qo‘shdik
+        cormorant: ['"Cormorant Garamond"', "serif"],
       },
     },
   },
