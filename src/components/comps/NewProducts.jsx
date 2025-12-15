@@ -3,7 +3,7 @@ import React from "react";
 const NewProducts = () => {
   return (
     <div className=" mt-[20px] m-auto w-[95%] ">
-      {/* text */}
+      {/* textttttt */}
       <div>
         <h3 className=" font-cormorant font-bold text-[30px] ">
           Hовые товары:
