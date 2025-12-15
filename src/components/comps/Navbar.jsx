@@ -6,7 +6,7 @@ import { MdMenuOpen } from "react-icons/md";
 
 const Navbar = () => {
   return (
-    <div className=" bg-white flex justify-between px-[15px] items-center pb-[5px] border-b-2 rounded-[30px] border-[#9A7447] ">
+    <div className=" bg-white flex justify-between px-[15px] items-center pb-[5px] border-b-2 rounded-b-[30px] border-[#9A7447] ">
       <div>
         {/* logo */}{" "}
         <img src="/image512.png" alt="logo" className=" h-[70px]" />{" "}
