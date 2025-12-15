@@ -1,9 +1,10 @@
 import React from "react";
+import Navbar from "../comps/Navbar";
 
 const Enter = () => {
   return (
-    <div className="mb-[85px]">
-      <h3>Assalamu Alekum</h3>
+    <div>
+      <Navbar />
     </div>
   );
 };
