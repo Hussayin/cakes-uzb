@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { IoIosArrowBack } from "react-icons/io";
 import { motion, AnimatePresence } from "framer-motion";
 
 const ProductModal = ({ product, closeModal }) => {
@@ -27,24 +28,48 @@ const ProductModal = ({ product, closeModal }) => {
           transition={{ duration: 0.45, ease: "easeInOut" }}
         >
           {/* HEADER */}
-          <div>
-            <button onClick={closeModal}>← Назад</button>
+          <div className=" py-[12px] px-[13px] mb-[15px] border-b-2 border-[#9e7746] ">
+            <button
+              onClick={closeModal}
+              className=" text-[23px] flex justify-center items-center text-[#9e7746] font-cormorant font-bold "
+            >
+              {" "}
+              <IoIosArrowBack /> Назад
+            </button>
           </div>
 
           {/* CONTENT */}
           <div>
-            <img src={product.image} alt={product.aboutProduct} />
+            <div className=" w-[95%] m-auto ">
+              <img src={product.image} alt={product.aboutProduct} />
+            </div>
 
-            <h2>{product.aboutProduct}</h2>
-            <p>
-              Цена: {product.price.toLocaleString("de-DE")}{" "}
-              {product.typeProduct}
-            </p>
-            <p>Старая цена: {product.demoPrice.toLocaleString("de-DE")}</p>
+            <div className=" flex justify-center gap-2 items-center mt-[20px] ">
+              <img
+                src={product.countri}
+                alt={product.aboutProduct}
+                className=" h-[20px] "
+              />
+              <h2 className=" font-cormorant font-bold text-[25px] leading-5 text-[#9e7746] ">
+                {product.aboutProduct}
+              </h2>
+            </div>
+            <div className=" flex justify-center items-center text-[#9e7746] ">
+              <p className=" font-mono font-bold text-[25px] ">
+                Цена: {product.price.toLocaleString("de-DE")}$
+                <span className=" font-mono font-bold text-[13px] line-through pl-[5px]  text-[#9e7746] ">
+                  {product.demoPrice.toLocaleString("de-DE")}$
+                </span>
+              </p>
+            </div>
 
-            <p>Зичлиги: {product.zichligi}</p>
-            <p>Материал: {product.material}</p>
-            <p>Ип баландлиги: {product.ipBalandligi}</p>
+            <div className=" text-[#9e7746] font-bold text-[23px] mt-[10px] w-[95%] m-auto ">
+              <p className=" font-cormorant ">Зичлиги: {product.zichligi}</p>
+              <p className=" font-cormorant ">Материал: {product.material}</p>
+              <p className=" font-cormorant ">
+                Ип баландлиги: {product.ipBalandligi}
+              </p>
+            </div>
           </div>
         </motion.div>
       </motion.div>
