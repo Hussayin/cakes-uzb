@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css"; // Toast stilini import qilamiz
 import Eron from "../comps/Eron";
 import Turkiya from "../comps/Turkiya";
 import Afgon from "../comps/Afgon";
+import AllCarpets from "../comps/AllCarpets";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/eron" element={<Eron />} />
           <Route path="/turkiya" element={<Turkiya />} />
           <Route path="/afgon" element={<Afgon />} />
+          <Route path="/allCarpets" element={<AllCarpets />} />
         </Routes>
         {/* </HelmetProvider> */}
       </BrowserRouter>

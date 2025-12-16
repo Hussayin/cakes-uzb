@@ -19,3 +19,8 @@ body {
 h3 {
   font-size: 17px;
 }
+
+.active {
+  background-color: #9a7447;
+  color: white;
+}

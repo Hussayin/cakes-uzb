@@ -1,0 +1,25 @@
+import React from "react";
+import { NavLink } from "react-router-dom";
+
+const Controller = () => {
+  return (
+    <div className="fixed  w-[100%] bottom-0 z-[10000000000] ">
+      <div className=" flex justify-center gap-[25px] pt-[13px] pb-[18px] px-[25px] items-center border-t-[3px] border-[#9A7447] rounded-t-[25px] bg-white ">
+        <NavLink
+          to="/"
+          className=" w-[90%] py-[5px] px-[7px] text-center m-auto border-2 border-[#9A7447] rounded-[10px] font-mono "
+        >
+          <h3 className=" font-mono font-bold text-[18px] ">Home</h3>
+        </NavLink>
+        <NavLink
+          to="/allCarpets"
+          className=" w-[90%] py-[5px] px-[7px] text-center m-auto border-2 border-[#9A7447] rounded-[10px] font-mono  "
+        >
+          <h3 className=" font-mono font-bold text-[18px] ">All Carpets</h3>
+        </NavLink>
+      </div>
+    </div>
+  );
+};
+
+export default Controller;
