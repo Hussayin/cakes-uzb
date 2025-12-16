@@ -14,14 +14,14 @@ const ProductModal = ({ product, closeModal }) => {
   return (
     <AnimatePresence mode="wait">
       <motion.div
-        className="fixed inset-0 z-50 bg-black/50"
+        className="fixed inset-0 bg-black/50 z-[100000000000000] "
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
         {/* MODAL CONTENT */}
         <motion.div
-          className="fixed top-0 right-0 w-full h-full bg-white overflow-y-auto"
+          className="fixed top-0 right-0 w-full h-full z-[100000000000000] bg-white overflow-y-auto"
           initial={{ x: "100%" }}
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
