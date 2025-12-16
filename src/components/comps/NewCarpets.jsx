@@ -10,7 +10,7 @@ const NewCarpets = () => {
   const allProducts = Object.values(Carpets).flat();
 
   return (
-    <div className="mt-[20px] m-auto w-[95%] mb-[100px] ">
+    <div className="mt-[20px] m-auto w-[95%] ">
       {/* text */}
       <h3 className="font-cormorant font-bold text-[30px]">Hовые товары:</h3>
 

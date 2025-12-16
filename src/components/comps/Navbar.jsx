@@ -38,7 +38,7 @@ const Navbar = () => {
 
             {/* SIDE MENU */}
             <motion.div
-              className="fixed top-0 right-0 h-full w-[100%] bg-white z-50 shadow-xl"
+              className="fixed top-0 right-0 h-full w-[100%] bg-white z-[1000000000] shadow-xl"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
