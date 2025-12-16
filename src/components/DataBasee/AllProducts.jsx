@@ -1,11 +1,175 @@
-import React from "react";
-
-const AllProducts = () => {
-  return (
-    <div>
-      <h1>Hello products</h1>
-    </div>
-  );
+export const Carpets = {
+  Eron: [
+    {
+      id: "eron-001",
+      countri:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flag_of_Iran.svg/500px-Flag_of_Iran.svg.png",
+      image: "https://www.sagexpress.uz/media/images/MX1329_DA32.jpg",
+      price: 122,
+      demoPrice: 133,
+      typeProduct1: "km",
+      typeProduct: "km",
+      aboutProduct: "Eron Collection",
+      zichligi: "1 m² ga 2880000 tugun",
+      material: "100% paxta",
+      ipBalandligi: "7mm",
+    },
+    {
+      id: "eron-002",
+      countri:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flag_of_Iran.svg/500px-Flag_of_Iran.svg.png",
+      image: "https://www.sagexpress.uz/media/images/da12.jpg",
+      price: 133,
+      demoPrice: 144,
+      typeProduct1: "",
+      typeProduct: "Kvadratniy",
+      aboutProduct: "Eron Collection",
+      zichligi: "1 m² ga 2880000 tugun",
+      material: "100% paxta",
+      ipBalandligi: "7mm",
+    },
+    {
+      id: "eron-003",
+      countri:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flag_of_Iran.svg/500px-Flag_of_Iran.svg.png",
+      image: "https://www.sagexpress.uz/media/images/MX1328_DA83.jpg",
+      price: 133,
+      demoPrice: 144,
+      typeProduct1: "",
+      typeProduct: "oval",
+      aboutProduct: "Eron Collection",
+      zichligi: "1 m² ga 2880000 tugun",
+      material: "100% paxta",
+      ipBalandligi: "7mm",
+    },
+    {
+      id: "eron-004",
+      countri:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flag_of_Iran.svg/500px-Flag_of_Iran.svg.png",
+      image: "https://www.sagexpress.uz/media/images/MX1328_DA77.jpg",
+      price: 133,
+      demoPrice: 144,
+      typeProduct1: "kv",
+      typeProduct: "daroshka",
+      aboutProduct: "Eron Collection",
+      zichligi: "1 m² ga 2880000 tugun",
+      material: "100% paxta",
+      ipBalandligi: "7mm",
+    },
+  ],
+  Turkiya: [
+    {
+      id: "turkiya-001",
+      countri:
+        "https://cdn.britannica.com/82/4782-050-8129909C/Flag-Turkey.jpg",
+      image: "https://www.sagexpress.uz/media/images/1568_13.jpg",
+      price: 122,
+      demoPrice: 133,
+      typeProduct1: "km",
+      typeProduct: "km",
+      aboutProduct: "Eron Collection",
+      zichligi: "1 m² ga 2880000 tugun",
+      material: "100% paxta",
+      ipBalandligi: "7mm",
+    },
+    {
+      id: "turkiya-002",
+      countri:
+        "https://cdn.britannica.com/82/4782-050-8129909C/Flag-Turkey.jpg",
+      image: "https://www.sagexpress.uz/media/images/1567_83.jpg",
+      price: 133,
+      demoPrice: 144,
+      typeProduct1: "",
+      typeProduct: "Kvadratniy",
+      aboutProduct: "Eron Collection",
+      zichligi: "1 m² ga 2880000 tugun",
+      material: "100% paxta",
+      ipBalandligi: "7mm",
+    },
+    {
+      id: "turkiya-003",
+      countri:
+        "https://cdn.britannica.com/82/4782-050-8129909C/Flag-Turkey.jpg",
+      image: "https://www.sagexpress.uz/media/images/1567_26_8DtgiWQ.png",
+      price: 133,
+      demoPrice: 144,
+      typeProduct1: "",
+      typeProduct: "oval",
+      aboutProduct: "Eron Collection",
+      zichligi: "1 m² ga 2880000 tugun",
+      material: "100% paxta",
+      ipBalandligi: "7mm",
+    },
+    {
+      id: "turkiya-004",
+      countri:
+        "https://cdn.britannica.com/82/4782-050-8129909C/Flag-Turkey.jpg",
+      image: "https://www.sagexpress.uz/media/images/1567_25_C7TbzPc.jpg",
+      price: 133,
+      demoPrice: 144,
+      typeProduct1: "",
+      typeProduct: "daroshka",
+      aboutProduct: "Turkiya Collection",
+      zichligi: "1 m² ga 2880000 tugun",
+      material: "100% paxta",
+      ipBalandligi: "7mm",
+    },
+  ],
+  Afgon: [
+    {
+      id: "afgon-001",
+      countri:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Flag_of_Afghanistan_%282013%E2%80%932021%29.svg/1200px-Flag_of_Afghanistan_%282013%E2%80%932021%29.svg.png",
+      image: "https://www.sagexpress.uz/media/images/1567_23.jpg",
+      price: 122,
+      demoPrice: 133,
+      typeProduct1: "km",
+      typeProduct: "km",
+      aboutProduct: "afgon Collection",
+      zichligi: "1 m² ga 2880000 tugun",
+      material: "100% paxta",
+      ipBalandligi: "7mm",
+    },
+    {
+      id: "afgon-002",
+      countri:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Flag_of_Afghanistan_%282013%E2%80%932021%29.svg/1200px-Flag_of_Afghanistan_%282013%E2%80%932021%29.svg.png",
+      image: "https://www.sagexpress.uz/media/images/1567_13.jpg",
+      price: 133,
+      demoPrice: 144,
+      typeProduct1: "",
+      typeProduct: "Kvadratniy",
+      aboutProduct: "afgon Collection",
+      zichligi: "1 m² ga 2880000 tugun",
+      material: "100% paxta",
+      ipBalandligi: "7mm",
+    },
+    {
+      id: "afgon-003",
+      countri:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Flag_of_Afghanistan_%282013%E2%80%932021%29.svg/1200px-Flag_of_Afghanistan_%282013%E2%80%932021%29.svg.png",
+      image: "https://www.sagexpress.uz/media/images/8808_63.jpg",
+      price: 133,
+      demoPrice: 144,
+      typeProduct1: "km",
+      typeProduct: "oval",
+      aboutProduct: "afgon Collection",
+      zichligi: "1 m² ga 2880000 tugun",
+      material: "100% paxta",
+      ipBalandligi: "7mm",
+    },
+    {
+      id: "afgon-004",
+      countri:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Flag_of_Afghanistan_%282013%E2%80%932021%29.svg/1200px-Flag_of_Afghanistan_%282013%E2%80%932021%29.svg.png",
+      image: "https://www.sagexpress.uz/media/images/KJ7274_AK63.png",
+      price: 133,
+      demoPrice: 144,
+      typeProduct: "daroshka",
+      aboutProduct: "Afgon Collection",
+      zichligi: "1 m² ga 2880000 tugun",
+      material: "100% paxta",
+      ipBalandligi: "7mm",
+    },
+  ],
 };
-
-export default AllProducts;

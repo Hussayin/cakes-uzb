@@ -1,311 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
+import { Carpets } from "../DataBasee/AllProducts"; // yo‘lingni o‘zingga mosla
+import ProductModal from "./ProductModal";
 
 const NewCarpets = () => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  // 🔹 Barcha davlatlardagi productlarni bitta arrayga yig‘amiz
+  const allProducts = Object.values(Carpets).flat();
+
   return (
-    <div className=" mt-[20px] m-auto w-[95%] ">
-      {/* textttttt */}
-      <div>
-        <h3 className=" font-cormorant font-bold text-[30px] ">
-          Hовые товары:
-        </h3>
-      </div>
+    <div className="mt-[20px] m-auto w-[95%]">
+      {/* text */}
+      <h3 className="font-cormorant font-bold text-[30px]">Hовые товары:</h3>
+
       {/* products */}
-      <div className=" flex mt-[10px] justify-between items-center flex-wrap gap-y-[13px] ">
-        {/* Product */}
-        <div className=" bg-white flex flex-col border-2 border-[#9A7447] rounded-[10px] ">
-          {/* image */}
-          <div className="w-[95%] m-auto mt-[7px] ">
-            <img
-              src="https://www.sagexpress.uz/media/product/fc11275b-dfa0-4a43-8ee4-234a83b91096.jpg"
-              alt="turkiya gilami"
-              className=" h-[260px] "
-            />
-          </div>
-          {/* price */}
-          <div className=" m-[7px] flex justify-between">
-            <div className=" leading-5">
-              <h3 className="text-[27px] font-mono font-bold ">
-                39$<span className="text-[15px] font-mono pl-[5px] ">Km</span>
-              </h3>
-              <h4 className=" line-through text-[14px] font-mono font-bold ">
-                44$
-              </h4>
-            </div>
-            <div>
+      <div className="flex mt-[10px] justify-between flex-wrap gap-y-[13px]">
+        {allProducts.map((product) => (
+          <div
+            key={product.id}
+            className="bg-white flex flex-col border-2 border-[#9A7447] rounded-[10px] cursor-pointer"
+            onClick={() => setSelectedProduct(product)}
+          >
+            {/* image */}
+            <div className="w-[95%] m-auto mt-[7px]">
               <img
-                src="https://cdn.britannica.com/82/4782-050-8129909C/Flag-Turkey.jpg"
-                alt="turkiya gilami"
-                className="w-[35px]"
+                src={product.image}
+                alt={product.aboutProduct}
+                className="h-[260px]"
               />
             </div>
-          </div>
-        </div>
-        {/* Product */}
-        <div className=" bg-white flex flex-col border-2 border-[#9A7447] rounded-[10px] ">
-          {/* image */}
-          <div className="w-[95%] m-auto mt-[7px] ">
-            <img
-              src="https://www.sagexpress.uz/media/images/8808_63.jpg"
-              alt="turkiya gilami"
-              className=" h-[260px] "
-            />
-          </div>
-          {/* price */}
-          <div className=" m-[7px] flex justify-between">
-            <div className=" leading-5">
-              <h3 className="text-[27px] font-mono font-bold ">
-                59$<span className="text-[15px] font-mono pl-[5px] ">Km</span>
-              </h3>
-              <h4 className=" line-through text-[14px] font-mono font-bold ">
-                64$
-              </h4>
-            </div>
-            <div>
-              <img
-                src="https://cdn.britannica.com/82/4782-050-8129909C/Flag-Turkey.jpg"
-                alt="turkiya gilami"
-                className="w-[35px]"
-              />
-            </div>
-          </div>
-        </div>
 
-        {/* Product */}
-        <div className=" bg-white flex flex-col border-2 border-[#9A7447] rounded-[10px] ">
-          {/* image */}
-          <div className="w-[95%] m-auto mt-[7px] ">
-            <img
-              src="https://www.sagexpress.uz/media/product/fc11275b-dfa0-4a43-8ee4-234a83b91096.jpg"
-              alt="turkiya gilami"
-              className=" h-[260px] "
-            />
-          </div>
-          {/* price */}
-          <div className=" m-[7px] flex justify-between">
-            <div className=" leading-5">
-              <h3 className="text-[27px] font-mono font-bold ">
-                39$<span className="text-[15px] font-mono pl-[5px] ">Km</span>
-              </h3>
-              <h4 className=" line-through text-[14px] font-mono font-bold ">
-                44$
-              </h4>
-            </div>
-            <div>
-              <img
-                src="https://cdn.britannica.com/82/4782-050-8129909C/Flag-Turkey.jpg"
-                alt="turkiya gilami"
-                className="w-[35px]"
-              />
-            </div>
-          </div>
-        </div>
-        {/* Product */}
-        <div className=" bg-white flex flex-col border-2 border-[#9A7447] rounded-[10px] ">
-          {/* image */}
-          <div className="w-[95%] m-auto mt-[7px] ">
-            <img
-              src="https://www.sagexpress.uz/media/images/8808_63.jpg"
-              alt="turkiya gilami"
-              className=" h-[260px] "
-            />
-          </div>
-          {/* price */}
-          <div className=" m-[7px] flex justify-between">
-            <div className=" leading-5">
-              <h3 className="text-[27px] font-mono font-bold ">
-                59$<span className="text-[15px] font-mono pl-[5px] ">Km</span>
-              </h3>
-              <h4 className=" line-through text-[14px] font-mono font-bold ">
-                64$
-              </h4>
-            </div>
-            <div>
-              <img
-                src="https://cdn.britannica.com/82/4782-050-8129909C/Flag-Turkey.jpg"
-                alt="turkiya gilami"
-                className="w-[35px]"
-              />
-            </div>
-          </div>
-        </div>
+            {/* price */}
+            <div className="m-[7px] flex justify-between">
+              <div className="leading-5">
+                <h3 className="text-[17px] font-mono font-bold whitespace-nowrap">
+                  {product.price.toLocaleString("de-DE")}$
+                  <span className="text-[15px] font-mono pl-[5px]">
+                    {product.typeProduct1}
+                  </span>
+                </h3>
 
-        {/* Product */}
-        <div className=" bg-white flex flex-col border-2 border-[#9A7447] rounded-[10px] ">
-          {/* image */}
-          <div className="w-[95%] m-auto mt-[7px] ">
-            <img
-              src="https://www.sagexpress.uz/media/product/fc11275b-dfa0-4a43-8ee4-234a83b91096.jpg"
-              alt="turkiya gilami"
-              className=" h-[260px] "
-            />
-          </div>
-          {/* price */}
-          <div className=" m-[7px] flex justify-between">
-            <div className=" leading-5">
-              <h3 className="text-[27px] font-mono font-bold ">
-                39$<span className="text-[15px] font-mono pl-[5px] ">Km</span>
-              </h3>
-              <h4 className=" line-through text-[14px] font-mono font-bold ">
-                44$
-              </h4>
-            </div>
-            <div>
-              <img
-                src="https://cdn.britannica.com/82/4782-050-8129909C/Flag-Turkey.jpg"
-                alt="turkiya gilami"
-                className="w-[35px]"
-              />
-            </div>
-          </div>
-        </div>
-        {/* Product */}
-        <div className=" bg-white flex flex-col border-2 border-[#9A7447] rounded-[10px] ">
-          {/* image */}
-          <div className="w-[95%] m-auto mt-[7px] ">
-            <img
-              src="https://www.sagexpress.uz/media/images/8808_63.jpg"
-              alt="turkiya gilami"
-              className=" h-[260px] "
-            />
-          </div>
-          {/* price */}
-          <div className=" m-[7px] flex justify-between">
-            <div className=" leading-5">
-              <h3 className="text-[27px] font-mono font-bold ">
-                59$<span className="text-[15px] font-mono pl-[5px] ">Km</span>
-              </h3>
-              <h4 className=" line-through text-[14px] font-mono font-bold ">
-                64$
-              </h4>
-            </div>
-            <div>
-              <img
-                src="https://cdn.britannica.com/82/4782-050-8129909C/Flag-Turkey.jpg"
-                alt="turkiya gilami"
-                className="w-[35px]"
-              />
-            </div>
-          </div>
-        </div>
+                <h4 className="line-through text-[12px] font-mono font-bold whitespace-nowrap">
+                  {product.demoPrice.toLocaleString("de-DE")}$
+                </h4>
+              </div>
 
-        {/* Product */}
-        <div className=" bg-white flex flex-col border-2 border-[#9A7447] rounded-[10px] ">
-          {/* image */}
-          <div className="w-[95%] m-auto mt-[7px] ">
-            <img
-              src="https://www.sagexpress.uz/media/product/fc11275b-dfa0-4a43-8ee4-234a83b91096.jpg"
-              alt="turkiya gilami"
-              className=" h-[260px] "
-            />
-          </div>
-          {/* price */}
-          <div className=" m-[7px] flex justify-between">
-            <div className=" leading-5">
-              <h3 className="text-[27px] font-mono font-bold ">
-                39$<span className="text-[15px] font-mono pl-[5px] ">Km</span>
-              </h3>
-              <h4 className=" line-through text-[14px] font-mono font-bold ">
-                44$
-              </h4>
-            </div>
-            <div>
               <img
-                src="https://cdn.britannica.com/82/4782-050-8129909C/Flag-Turkey.jpg"
-                alt="turkiya gilami"
-                className="w-[35px]"
+                src={product.countri}
+                alt="country"
+                className="h-[25px] object-cover "
               />
             </div>
           </div>
-        </div>
-        {/* Product */}
-        <div className=" bg-white flex flex-col border-2 border-[#9A7447] rounded-[10px] ">
-          {/* image */}
-          <div className="w-[95%] m-auto mt-[7px] ">
-            <img
-              src="https://www.sagexpress.uz/media/images/8808_63.jpg"
-              alt="turkiya gilami"
-              className=" h-[260px] "
-            />
-          </div>
-          {/* price */}
-          <div className=" m-[7px] flex justify-between">
-            <div className=" leading-5">
-              <h3 className="text-[27px] font-mono font-bold ">
-                59$<span className="text-[15px] font-mono pl-[5px] ">Km</span>
-              </h3>
-              <h4 className=" line-through text-[14px] font-mono font-bold ">
-                64$
-              </h4>
-            </div>
-            <div>
-              <img
-                src="https://cdn.britannica.com/82/4782-050-8129909C/Flag-Turkey.jpg"
-                alt="turkiya gilami"
-                className="w-[35px]"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Product */}
-        <div className=" bg-white flex flex-col border-2 border-[#9A7447] rounded-[10px] ">
-          {/* image */}
-          <div className="w-[95%] m-auto mt-[7px] ">
-            <img
-              src="https://www.sagexpress.uz/media/product/fc11275b-dfa0-4a43-8ee4-234a83b91096.jpg"
-              alt="turkiya gilami"
-              className=" h-[260px] "
-            />
-          </div>
-          {/* price */}
-          <div className=" m-[7px] flex justify-between">
-            <div className=" leading-5">
-              <h3 className="text-[27px] font-mono font-bold ">
-                39$<span className="text-[15px] font-mono pl-[5px] ">Km</span>
-              </h3>
-              <h4 className=" line-through text-[14px] font-mono font-bold ">
-                44$
-              </h4>
-            </div>
-            <div>
-              <img
-                src="https://cdn.britannica.com/82/4782-050-8129909C/Flag-Turkey.jpg"
-                alt="turkiya gilami"
-                className="w-[35px]"
-              />
-            </div>
-          </div>
-        </div>
-        {/* Product */}
-        <div className=" bg-white flex flex-col border-2 border-[#9A7447] rounded-[10px] ">
-          {/* image */}
-          <div className="w-[95%] m-auto mt-[7px] ">
-            <img
-              src="https://www.sagexpress.uz/media/images/8808_63.jpg"
-              alt="turkiya gilami"
-              className=" h-[260px] "
-            />
-          </div>
-          {/* price */}
-          <div className=" m-[7px] flex justify-between">
-            <div className=" leading-5">
-              <h3 className="text-[27px] font-mono font-bold ">
-                59$<span className="text-[15px] font-mono pl-[5px] ">Km</span>
-              </h3>
-              <h4 className=" line-through text-[14px] font-mono font-bold ">
-                64$
-              </h4>
-            </div>
-            <div>
-              <img
-                src="https://cdn.britannica.com/82/4782-050-8129909C/Flag-Turkey.jpg"
-                alt="turkiya gilami"
-                className="w-[35px]"
-              />
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
+
+      {/* MODAL */}
+      {selectedProduct && (
+        <ProductModal
+          product={selectedProduct}
+          closeModal={() => setSelectedProduct(null)}
+        />
+      )}
     </div>
   );
 };
