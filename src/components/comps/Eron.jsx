@@ -44,14 +44,14 @@ const Eron = () => {
       </div>
 
       {/* FILTERS + PRODUCTS */}
-      <div className="mt-[20px] m-auto w-[95%] mb-[70px]">
+      <div className="mt-[10px] m-auto w-[95%] mb-[70px]">
         {/* TYPE FILTER */}
-        <div className="flex gap-2 mb-4 flex-wrap">
+        <div className="flex gap-[5px] mb-[10px] flex-wrap">
           {["all", "Kvadratniy", "oval", "km", "daroshka"].map((type) => (
             <button
               key={type}
               onClick={() => setActiveType(type)}
-              className={`px-4 py-2 rounded-full text-sm transition-all duration-300
+              className={`px-4 font-cormorant font-bold py-1 rounded-full text-[15px] transition-all duration-300
         ${
           activeType === type
             ? "bg-[#9A7447] text-white shadow-md"
@@ -65,18 +65,20 @@ const Eron = () => {
         </div>
 
         {/* PRICE FILTER */}
-        <div className="flex gap-2 mb-5">
+        <div className="flex items-center gap-4 mt-[10px] w-[100%] mb-[15px] m-auto">
           <input
             type="number"
             placeholder="Min price"
             value={minPrice}
             onChange={(e) => setMinPrice(e.target.value)}
+            className="w-full rounded-[10px] border-[#9A7447] border-[2px] font-cormorant font-bold px-[5px] py-[5px] text-black"
           />
           <input
             type="number"
             placeholder="Max price"
             value={maxPrice}
             onChange={(e) => setMaxPrice(e.target.value)}
+            className="w-full rounded-[10px] border-[#9A7447] border-[2px] px-[5px] py-[5px] font-cormorant font-bold text-black"
           />
         </div>
 
