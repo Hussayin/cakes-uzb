@@ -21,7 +21,7 @@ const ProductModal = ({ product, closeModal }) => {
       >
         {/* MODAL CONTENT */}
         <motion.div
-          className="fixed top-0 right-0 w-full h-full z-[100000000000000] bg-white overflow-y-auto"
+          className="fixed  top-0 right-0 w-full h-full z-[100000000000000] bg-white overflow-y-auto"
           initial={{ x: "100%" }}
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
@@ -39,7 +39,7 @@ const ProductModal = ({ product, closeModal }) => {
           </div>
 
           {/* CONTENT */}
-          <div>
+          <div className=" flex-1 overflow-y-auto mb-[200px] ">
             <div className=" w-[95%] m-auto ">
               <img src={product.image} alt={product.aboutProduct} />
             </div>
