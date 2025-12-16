@@ -6,6 +6,7 @@ import ScrollManager from "./ScrollManager";
 
 import { ToastContainer } from "react-toastify"; // Toastni qo'shamiz
 import "react-toastify/dist/ReactToastify.css"; // Toast stilini import qilamiz
+import Eron from "../comps/Eron";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         {/* <ScrollToTop /> */}
         <Routes>
           <Route path="/" element={<Enter />} />
+          <Route path="/eron" element={<Eron />} />
         </Routes>
         {/* </HelmetProvider> */}
       </BrowserRouter>

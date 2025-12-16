@@ -1,18 +1,22 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Countries = () => {
   return (
     <div className=" mt-[20px] flex justify-center items-center ">
       <div className=" w-[95%] px-[15px] py-[10px] border-2 rounded-[20px] border-[#9A7447] bg-white flex justify-between items-center flex-wrap">
         {/* eron */}
-        <div className=" flex flex-col justify-center items-center ">
+        <NavLink
+          to="/eron"
+          className=" flex flex-col justify-center items-center "
+        >
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Flag_of_Iran.svg/500px-Flag_of_Iran.svg.png"
             alt="Eron gilamlar"
             className=" h-[60px] w-[60px] rounded-[50%] object-cover "
           />
           <h3 className=" font-cormorant font-bold ">Иран</h3>
-        </div>
+        </NavLink>
         {/* Turkiya */}
         <div className=" flex flex-col justify-center items-center ">
           <img
