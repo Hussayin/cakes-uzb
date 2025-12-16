@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Carpets } from "../DataBasee/AllProducts"; // yo‘lingni o‘zingga mosla
 import ProductModal from "./ProductModal";
+import { motion } from "framer-motion";
 
 const NewCarpets = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -23,10 +24,13 @@ const NewCarpets = () => {
           >
             {/* image */}
             <div className="w-[95%] m-auto mt-[7px]">
-              <img
+              <motion.img
                 src={product.image}
                 alt={product.aboutProduct}
                 className="h-[260px]"
+                initial={{ opacity: 0, filter: "blur(12px)", scale: 1.05 }}
+                animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
               />
             </div>
 
