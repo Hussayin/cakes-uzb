@@ -31,7 +31,7 @@ const AllCarpets = () => {
 
   return (
     <div>
-      <div className=" z-[10000000000]">
+      <div className="">
         <Controller />
       </div>
       {/* EXIT */}
