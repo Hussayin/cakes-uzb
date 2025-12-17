@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Carpets } from "../DataBasee/AllProducts"; // yo‘lingni o‘zingga mosla
 import ProductModal from "./ProductModal";
 import { motion } from "framer-motion";
+import { TelegramContext } from "../context/TelegramContext";
 
 const NewCarpets = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const { sendToTelegram } = useContext(TelegramContext);
 
   // 🔹 Barcha davlatlardagi productlarni bitta arrayga yig‘amiz
   const allProducts = Object.values(Carpets).flat();
+
+  const handleProductClick = (product) => {
+    sendToTelegram(product);
+    setSelectedProduct(product);
+  };
 
   return (
     <div className="mt-[20px] m-auto w-[95%] ">
@@ -20,7 +27,7 @@ const NewCarpets = () => {
           <div
             key={product.id}
             className="bg-white flex flex-col border-2 border-[#9A7447] rounded-[10px] cursor-pointer"
-            onClick={() => setSelectedProduct(product)}
+            onClick={() => handleProductClick(product)}
           >
             {/* image */}
             <div className="w-[95%] m-auto mt-[7px]">

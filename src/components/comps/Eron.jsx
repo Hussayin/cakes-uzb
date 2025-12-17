@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import ProductModal from "./ProductModal";
 import { Carpets } from "../DataBasee/AllProducts"; // 🔴 yo‘lni tekshir
+import { TelegramContext } from "../context/TelegramContext";
 
 const Eron = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [activeType, setActiveType] = useState("all");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
-
+  const { sendToTelegram } = useContext(TelegramContext);
   // 🔹 FAQAT ERON MAHSULOTLARI
   const eronProducts = Carpets.Eron;
 
@@ -27,6 +28,11 @@ const Eron = () => {
     const max = maxPrice ? Number(maxPrice) : Infinity;
     return price >= min && price <= max;
   });
+
+  const handleProductClick = (product) => {
+    sendToTelegram(product);
+    setSelectedProduct(product);
+  };
 
   return (
     <div>
@@ -88,7 +94,7 @@ const Eron = () => {
             <div
               key={product.id}
               className="bg-white flex flex-col border-2 border-[#9A7447] rounded-[10px] cursor-pointer"
-              onClick={() => setSelectedProduct(product)}
+              onClick={() => handleProductClick(product)}
             >
               {/* IMAGE */}
               <div className="w-[95%] m-auto mt-[7px]">
