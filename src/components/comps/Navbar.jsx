@@ -1,5 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { BsInstagram } from "react-icons/bs";
+import { BsTelegram } from "react-icons/bs";
+import { TbPhoneCall } from "react-icons/tb";
+import { FaMapLocationDot } from "react-icons/fa6";
+import { MdSell } from "react-icons/md";
+import { BsFillMoonStarsFill } from "react-icons/bs";
 
 // icons
 import { FaShoppingBasket } from "react-icons/fa";
@@ -7,6 +13,14 @@ import { MdMenuOpen, MdClose } from "react-icons/md";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+
+  // 🔒 ORQA FON SCROLLNI O‘CHIRISH
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
 
   return (
     <>
@@ -52,12 +66,98 @@ const Navbar = () => {
               </div>
 
               {/* menu items */}
-              <ul className="flex flex-col gap-6 px-6 text-lg font-medium">
-                <li className="text-[#9A7447] cursor-pointer">Bosh sahifa</li>
-                <li className="cursor-pointer">Mahsulotlar</li>
-                <li className="cursor-pointer">Savatcha</li>
-                <li className="cursor-pointer">Aloqa</li>
-              </ul>
+              {/* Social medi and servise */}
+              <div className=" w-[90%] m-auto  ">
+                <div className=" flex justify-center mt-[30px] items-center flex-col gap-[20px]">
+                  <motion.a
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{
+                      ease: "easeOut", // Easing funksiyasi
+                      duration: 1, // Animatsiya davomiyligi
+                      delay: 0.2,
+                    }}
+                    href="https://maps.app.goo.gl/fqPkLFAJHpWpFBi59"
+                    target="_blank"
+                    className=" flex justify-center bg-white text-[#9A7447] border-[#9A7447] font-bold items-center relative border-2 p-[7px] rounded-[15px] text-center font-cormorant text-[20px] w-[100%] "
+                  >
+                    Location
+                    <FaMapLocationDot className=" absolute left-[15px] text-[30px]  " />
+                  </motion.a>
+
+                  <motion.a
+                    initial={{ opacity: 0, x: 52 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{
+                      ease: "easeOut", // Easing funksiyasi
+                      duration: 1, // Animatsiya davomiyligi
+                      delay: 0.3,
+                    }}
+                    href="https://www.instagram.com/hussayn_077"
+                    target="_blank"
+                    className=" flex justify-center bg-white text-[#9A7447] border-[#9A7447] font-bold items-center relative border-2 p-[7px] rounded-[15px] text-center font-cormorant text-[20px] w-[100%] "
+                  >
+                    Instagram
+                    <BsInstagram className=" absolute left-[15px] text-[30px]  " />
+                  </motion.a>
+
+                  <motion.a
+                    initial={{ opacity: 0, x: 54 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{
+                      ease: "easeOut", // Easing funksiyasi
+                      duration: 1, // Animatsiya davomiyligi
+                      delay: 0.4,
+                    }}
+                    href="https://t.me/khusko077"
+                    target="_blank"
+                    className=" flex justify-center bg-white text-[#9A7447] border-[#9A7447] font-extrabold items-center relative border-2 p-[7px] rounded-[15px] text-center font-cormorant text-[20px] w-[100%] "
+                  >
+                    Telegram
+                    <BsTelegram className=" absolute left-[15px] text-[30px]  " />
+                  </motion.a>
+
+                  <motion.a
+                    initial={{ opacity: 0, x: 56 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{
+                      ease: "easeOut", // Easing funksiyasi
+                      duration: 1, // Animatsiya davomiyligi
+                      delay: 0.5,
+                    }}
+                    href="tel:+998977122206"
+                    className=" flex justify-center bg-white text-[#9A7447] border-[#9A7447] font-bold items-center relative border-2 p-[7px] rounded-[15px] text-center  text-[20px] w-[100%] "
+                  >
+                    +998 90 077 07 28
+                    <FaMapLocationDot className=" absolute left-[15px] text-[30px]  " />
+                  </motion.a>
+                </div>
+              </div>
+
+              {/* funder image */}
+              <div className=" w-[95%] m-auto mt-[30px] ">
+                <div className="  flex justify-center items-center flex-col ">
+                  <a
+                    href="https://www.instagram.com/maruf__mahkamov/"
+                    target="_blank"
+                    className=" border-[#9A7447] border-[3px] rounded-[22px] p-[10px] "
+                  >
+                    <img
+                      src="/maruf.jpg"
+                      alt="funder"
+                      className=" h-[320px] rounded-[20px] "
+                    />
+                  </a>
+                  <div className=" text-center leading-7 mt-[10px] ">
+                    <h1 className=" font-cormorant text-[27px] text-[#9A7447] font-extrabold ">
+                      Maruf Mahkamov
+                    </h1>
+                    <h1 className=" font-cormorant text-[20px] text-[#9A7447] font-extrabold ">
+                      Funder: Sanat Hali
+                    </h1>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </>
         )}
