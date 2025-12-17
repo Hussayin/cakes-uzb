@@ -90,7 +90,7 @@ const Afgon = () => {
         </div>
 
         {/* PRODUCTS */}
-        <div className="flex justify-between flex-wrap gap-y-[13px]">
+        <div className="grid grid-cols-2 gap-[13px]">
           {filteredProducts.map((product) => (
             <div
               key={product.id}

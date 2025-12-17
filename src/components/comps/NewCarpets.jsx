@@ -22,7 +22,7 @@ const NewCarpets = () => {
       <h3 className="font-cormorant font-bold text-[30px]">Hовые товары:</h3>
 
       {/* products */}
-      <div className="flex mt-[10px] justify-between flex-wrap gap-y-[13px]">
+      <div className=" grid grid-cols-2  mt-[10px] gap-[13px]">
         {allProducts.map((product) => (
           <div
             key={product.id}
