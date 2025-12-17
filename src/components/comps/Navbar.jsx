@@ -14,14 +14,6 @@ import { MdMenuOpen, MdClose } from "react-icons/md";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
-  // 🔒 ORQA FON SCROLLNI O‘CHIRISH
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, []);
-
   return (
     <>
       {/* NAVBAR */}
